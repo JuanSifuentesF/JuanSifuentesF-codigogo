@@ -17,6 +17,9 @@
                     type="text" 
                     id="nombres"
                     placeholder="Escribe aqui tus nombres"
+                    required
+                    minlength="2"
+                    maxlength="10"
                 >
                 <br>
                 <label for="apellidos">Apellidos</label>
@@ -24,6 +27,7 @@
                     type="text"
                     id="apellidos"
                     placeholder="Escribe aqui tus apellidos"
+                    pattern="[a-z]{1,}"
                 >
                 <br>
                 <label for="email">email:</label>
@@ -43,8 +47,10 @@
                 <label for="edad">Edad</label>
                 <input 
                     type="number"
-                    id="edad"
                     placeholder="18"
+                    id="edad"
+                    min="0"
+                    max="140"
                 >
                 <br>
                 <label>Género</label>
