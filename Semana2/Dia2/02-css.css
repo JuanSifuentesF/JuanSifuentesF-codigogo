@@ -21,6 +21,6 @@ section{
 .titulo1 {
     font-family: sans-serif;
     text-decoration: underline;
-    color: blue;
+    color:crimson !important;
     background: lightcoral;
 }
