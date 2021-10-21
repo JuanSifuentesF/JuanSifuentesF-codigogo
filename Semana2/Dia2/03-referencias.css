@@ -1,0 +1,38 @@
+/*la coma (,) hace referencia a un "y"*/
+h1, article{
+    text-decoration: underline;
+}
+
+/*Todos los p que sean hijos dentro de un article*/
+article p{
+    background-color: aquamarine;
+}
+
+/* > hace referencia a los primeros hijos*/
+ol > li {
+    color: rebeccapurple;
+}
+
+/* > hace referencia a los hijos de article*/
+article > p{
+    color: red;
+}
+
+#caja > span{
+    background-color: yellow;
+}
+
+#caja > div > span{
+    background-color: red;
+}
+
+/*PSEUDOCLASES*/
+/*nth-of-type (numero o un indicador)
+Elementos Impares van dentro del (odd)
+Elementos Pares van dentro del (even)*/
+tr:nth-of-type(odd){
+    background-color: chocolate;
+}
+tr:nth-of-type(even){
+    background-color: yellow;
+}
