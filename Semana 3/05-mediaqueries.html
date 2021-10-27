@@ -6,11 +6,46 @@
     <title>Media Queries</title>
 </head>
 <style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+
+    h1{
+        background-color: blueviolet;
     }
+
+    .titulares, .noticia{
+        border: 1px solid red;
+  
+    }
+    .titulares{
+        display: flex;
+        justify-content: space-between;
+    }
+    /*puede tener un ancho menor a 200px pero no mayor*/
+    .noticia{
+        max-width: 200px;
+    }
+    
+    /* hoja de css, aparte, solo para cierto ancho*/
+    @media screen and (max-width:768px) {
+        
+        h1{
+            background-color: aquamarine;
+         }
+
+         .titulares, .noticia{
+             border: 1px solid red;
+         }
+
+    }
+
+    /*max hasta 576*/
+    /*min desde 576 a + */
+    @media screen and (max-width:576px) {
+        h1{
+            background-color: orangered;
+        }
+        
+    }
+
 </style>
 <body>
     <header>
