@@ -3,7 +3,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     font-family: 'Open Sans', sans-serif;
 }
 /* inicio del nav*/
@@ -27,7 +27,6 @@ nav ul{
     /* remover viñetas */
     list-style-type: none;
     align-items: center;
-    font-family: 'Open Sans ligt';
 }
 
 nav li{
@@ -41,8 +40,14 @@ button{
     border-radius: 20px;
     color: white;
     max-height: 40px;
-    
 }
+
+/* puntero esta encima */
+button:hover{
+    background-color: white;
+    color:rgb(59, 59, 59)
+}
+
 /* fin del nav*/
 
 .hero{
@@ -58,10 +63,63 @@ button{
 }
 
 .hero h1{
-    font-style: calc(16px + 2vw);
+    font-size: calc(22px + 1vw);
     text-align: center;
 }
 
 .hero img{
     max-width: 75vw ;
+}
+
+/* tarjetas */
+
+.caracteristicas{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.caracteristicas h2{
+    text-align: center;
+}
+
+.tarjetas{
+    display: flex;
+}
+
+.tarjeta{
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow d_eje"x" d_eje"y" difuminado*/
+    box-shadow: 0 0 10px gray  ;
+}
+
+.tarjeta *{
+    margin: 5px 0;
+}
+
+.tarjeta img{
+    width: 60px;
+}
+
+.tarjeta a{
+    text-decoration: none;
+}
+
+/* numeros enteros, odd(impares) y even(pares) */
+.tarjeta:nth-last-of-type(even){
+    background-image: linear-gradient(45deg,#3dada4,#c71fe6);
+    color: white;
+}
+
+@media screen and (max-width:768px){
+    .tarjetas{
+        flex-direction: column;
+        
+    }
+    .tarjeta{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
