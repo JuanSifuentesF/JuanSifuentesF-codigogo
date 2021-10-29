@@ -9,6 +9,10 @@
     border: 1px solid red;
     height: 100vh;
     display: grid;
+    /*indicar como queremos nuestras columnas*/
+    /*repeat(cuantos,tamaño) - "1fr" ajusta a la pantalla*/
+    /* grid-template-columns: repeat(4,1fr) ; */
+    grid-template-columns: repeat(4,minmax(150px,1fr));
 }
 
 .item {
