@@ -130,6 +130,10 @@ button:hover{
 
 }
 
+.menu{
+    transition-duration: 0.5s;
+}
+
 /* MediaQueries */
 
 @media screen and (max-width:768px){
@@ -152,5 +156,28 @@ button:hover{
         height: 100vh;
         background-color: #c71fe6;
         flex-direction: column;
+        padding: 100px 0;
+        right:100%;
+    }
+
+    .menu li{
+        padding: 20px 0;
+        font-size: 24px;
+    }
+
+    .hide-menu-btn{
+        position:absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    .hide-menu-btn, .show-menu-btn{
+        display: block;
+    }
+
+    /* :checked hace referencia si el check esta activo */
+    /* ~ este simbolo hara referencia a os elementos despues de check en la estructura, en este caso, menú */
+    #check:checked ~ .menu{
+        right: 0;
     }
 }
