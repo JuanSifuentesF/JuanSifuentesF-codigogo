@@ -157,7 +157,7 @@ button:hover{
         background-color: #c71fe6;
         flex-direction: column;
         padding: 100px 0;
-        right:100%;
+        right:-100%;
     }
 
     .menu li{
