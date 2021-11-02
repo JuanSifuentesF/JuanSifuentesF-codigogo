@@ -106,11 +106,31 @@ button:hover{
     text-decoration: none;
 }
 
+
 /* numeros enteros, odd(impares) y even(pares) */
 .tarjeta:nth-last-of-type(even){
     background-image: linear-gradient(45deg,#3dada4,#c71fe6);
     color: white;
 }
+
+/* Menu */
+
+#check{
+    /* Esdonde visualmente al elemento */
+    visibility: hidden;
+    position: absolute;
+    z-index: -99;
+}
+
+.show-menu-btn, 
+.hide-menu-btn{
+    cursor: pointer;
+    font-size: 30px;
+    display: none;
+
+}
+
+/* MediaQueries */
 
 @media screen and (max-width:768px){
     .tarjetas{
@@ -121,5 +141,16 @@ button:hover{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 572px) {
+    .menu{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #c71fe6;
+        flex-direction: column;
     }
 }
