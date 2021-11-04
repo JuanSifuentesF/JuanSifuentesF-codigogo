@@ -6,6 +6,12 @@
     font-family: Helvetica, sans-erif;
 }
 
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px auto;
+}
+
 a{
     color: gray;
     text-decoration: none; /* no tenga subrayado */
@@ -58,9 +64,9 @@ input{
     display:flex;
     flex-direction:column;
     flex-wrap: wrap;
-    width: 900px;
+    width: 150vh;
     /* para que entren los elementos */
-    height: 350vh;  
+    height: 150vh;  
 }
 
 .tile{
@@ -81,7 +87,7 @@ input{
 }
 
 .tile .overlay{
-    /* display: none; */
+    display: none;
     position:absolute;
     z-index: 1;
     width: 90%;
@@ -110,5 +116,24 @@ input{
     padding: 10px;
     border-radius: 5px;
     border: 0;
+    cursor: pointer;
+}
+
+.tile-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.tile-bottom img{
+    width: 10px;
+    margin-right: 14px;
+    align-self: center;
+}
+
+.tile-bottom p{
+    font-weight: bold;
+    color: gray;
+    font-size: 14px;
 }
 
