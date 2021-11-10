@@ -41,7 +41,7 @@ let arrJuegos = [
 let presupuesto = +prompt("Cuanto es su presupuesto?");
 
 function revisarPresupuesto () {
-    let juegosComprables = [] //una lista de los juegos que el usuario puede comprar
+    let juegosComprables = []; //una lista de los juegos que el usuario puede comprar
     for(let i = 0; i < arrJuegos.length; i ++){
         if(presupuesto >= arrJuegos[i].precio){
             juegosComprables.push(arrJuegos[i])
@@ -51,11 +51,26 @@ function revisarPresupuesto () {
 }
 //agregarACarrito tiene que trabajar con la lista de los juegos que el usuario puede comprar
 function agregarACarrito(listaJuegos){
+    let carrito = [];
     for(let j = 0; j < listaJuegos.length; j++){
+        //como necesito saber si al comprar un juego puedo comprar el siguiente sin quedarme sin plata
+        if(presupuesto < listaJuegos[j].precio){
+            console.log("Lo siento, no alcanza");
+            continue;//salta
+        }
+
+
         //confirm pregunta y obtiene un booleano
         let compra = confirm(`Deseas comprar? ${listaJuegos[j].nombre}`);
         console.log(compra);
+        if(compra == true){
+            carrito.push(listaJuegos[j]);
+            //actualizando mi presupuesto segun vaya comprando
+            presupuesto = presupuesto - listaJuegos[j].precio
+        }
     }
+    //despues del for carrito estara lleno
+    return carrito;
 }
 
 let listaComprables = revisarPresupuesto();
@@ -63,7 +78,11 @@ console.table(listaComprables);
 //Despues de saber que juegos puede comprar el usuario
 //le pregunto cual o cuales comprar
 
-agregarACarrito(listaComprables);
+let miCarrito = agregarACarrito(listaComprables);
+
+console.log("Haz comprado: ");
+console.table(miCarrito);
+console.log(`tu vuelto es ${presupuesto}`);
 
 
     
