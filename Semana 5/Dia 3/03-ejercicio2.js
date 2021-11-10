@@ -1,11 +1,11 @@
 let arrJuegos = [
     {
         nombre : "The Witcher 3",
-        precio : 60
+        precio : 60,
     },
     {
         nombre : "Doom",
-        precio : 50
+        precio : 50,
     },
     {
         nombre : "Among Us",
@@ -21,8 +21,9 @@ let arrJuegos = [
     },
     {
         nombre : "Civilization VI",
-        precio : 45
-    }
+        precio : 45,
+    },
+];
 
     /**
      * Preguntaremos al usuario cual es su presupuesto, para ofrecerle videojuegos que esten a su alcance.
@@ -30,11 +31,39 @@ let arrJuegos = [
      */
 
     /**
-     * 1. preguntar su presupuesto
+     * 1. preguntar su presupuesto 
      * 2. comparar el presupuesto con los juegos que ofrecemos
      * 3. segun la comparacion tener una lista de juegos a ofrecer
      * 4. agregar al carrito, seleccionar items
      * 5. cobrar, indicar el total
      */
 
-]
+let presupuesto = +prompt("Cuanto es su presupuesto?");
+
+function revisarPresupuesto () {
+    let juegosComprables = [] //una lista de los juegos que el usuario puede comprar
+    for(let i = 0; i < arrJuegos.length; i ++){
+        if(presupuesto >= arrJuegos[i].precio){
+            juegosComprables.push(arrJuegos[i])
+        }
+    }
+    return juegosComprables;
+}
+//agregarACarrito tiene que trabajar con la lista de los juegos que el usuario puede comprar
+function agregarACarrito(listaJuegos){
+    for(let j = 0; j < listaJuegos.length; j++){
+        //confirm pregunta y obtiene un booleano
+        let compra = confirm(`Deseas comprar? ${listaJuegos[j].nombre}`);
+        console.log(compra);
+    }
+}
+
+let listaComprables = revisarPresupuesto();
+console.table(listaComprables);
+//Despues de saber que juegos puede comprar el usuario
+//le pregunto cual o cuales comprar
+
+agregarACarrito(listaComprables);
+
+
+    
