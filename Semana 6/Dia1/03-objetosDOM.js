@@ -15,6 +15,22 @@ navigator.geolocation.getCurrentPosition(function(ubicacion){
 
 console.log(window.document);
 
+//estoy capturando un elemento
 let miTitulo = document.querySelector("h1");
 
 console.log(miTitulo);
+
+//innerHTML, es el contendio HTML de un elemento
+miTitulo.innerHTML = "Hola soy un nuevo Titulo";
+
+// EL HTML DENTRO DE LA ETIQUETA
+console.log(miTitulo.innerHTML);
+
+//Obtener un elemento
+let miCaja = document.getElementById("caja");
+console.log(miCaja);
+
+//innerHTML, representa el contenido de un elemento
+miCaja.innerHTML = "<h2> Titulo Caja </h2>";
+miCaja.style.backgroundColor = "purple";
+miCaja.style.color = "white";
