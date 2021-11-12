@@ -34,3 +34,17 @@ console.log(miCaja);
 miCaja.innerHTML = "<h2> Titulo Caja </h2>";
 miCaja.style.backgroundColor = "purple";
 miCaja.style.color = "white";
+
+let misItems = document.getElementsByClassName("lista_item");
+
+//Array.from(htmlCollection), crea un arreglo
+
+let arregloItems = Array.from(misItems);
+
+console.log(arregloItems);
+
+//anotacion importante acerca de forEach, map, filter, find
+arregloItems.forEach(function(item, indice){
+    item.style.backgroundColor = "skyblue";
+    item.innerHTML = `Patata ${indice}`;
+});
