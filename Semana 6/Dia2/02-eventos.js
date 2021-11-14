@@ -92,3 +92,4 @@ miFormulario.addEventListener("submit", function (evento) {
   };
   console.log(nuevoUsuario);
 });
+
