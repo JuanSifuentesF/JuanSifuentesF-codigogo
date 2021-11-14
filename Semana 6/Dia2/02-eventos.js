@@ -45,15 +45,50 @@ let btnVer = document.createElement("button");
 btnVer.innerText = "ver";
 divContenido.appendChild(btnVer);
 
-
 //ESTA PARTE EXPLICA PARA QUE EL BOTON "VER", AL DARLE CLICK, MUESTRE Y OCULTE EL PASSWORD
 let esVisible = false; //flag
 
 btnVer.addEventListener("click", function () {
-    esVisible = !esVisible;
+  esVisible = !esVisible;
   if (esVisible == false) {
     miInput.setAttribute("type", "text");
   } else {
     miInput.setAttribute("type", "password");
   }
+});
+
+// Caputrar eventos
+
+let irAGoogle = document.createElement("a");
+
+irAGoogle.setAttribute("href", "https://google.com");
+
+irAGoogle.innerText = "Llevame a Google";
+
+divContenido.appendChild(irAGoogle);
+
+///
+irAGoogle.addEventListener("click", function (evento) {
+  evento.preventDefault();
+  console.log(evento);
+});
+
+//capturar primero el formulario
+
+let miFormulario = document.getElementById("formulario");
+
+//submit es la accion de enviar datos
+miFormulario.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  console.log("Submiiit!!!");
+
+  //vamos a hacer envio de datos con Javascript
+  //Todo lo que obtengan de un input lo suele devolver como string
+  let nuevoUsuario = {
+    //he obtenido los datos de los input
+    //formulario.nombre_input.value
+    nombres: miFormulario.nombres.value,
+    apellidos: miFormulario.apellidos.value,
+  };
+  console.log(nuevoUsuario);
 });
