@@ -223,8 +223,8 @@ function calcularReporte(arrVentas) {
     } else {
       //Acá por descarte, cuesta menos de 500
       T3 += arrVentas[i].precio;
-    }
-  }
+    };
+  };
 
   let reporte = {
     mayorAMil: T1,
@@ -247,4 +247,3 @@ let p = document.createElement("p");
 p.innerHTML = `El monto global es ${datos.totalGlobal}`;
 
 cuerpo.appendChild(p);
-
