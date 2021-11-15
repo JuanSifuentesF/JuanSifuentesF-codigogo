@@ -56,11 +56,8 @@
 
 // console.log("La suma total es: ",sumaArregloMixto(arregloMixto))
 
-
 //sumar unicamente numeros positivos
 // let numeros = [1, -2, 3, 10, -5];
-
-
 
 // Buscar la cantidad de palabras del siguiente arreglo
 // let palabras = ["perro", "gato", "leon", "dragon", "perro", "gato","gato"];
@@ -89,4 +86,89 @@
 
 // console.log(verificarRUC("20100128056"));
 
+// let pagoHora = +prompt("Ingresar pago por hora: ");
+// let totalHoras = 0;
 
+// for (let i = 1; i <= 6; i++) {
+//   let cantDiaria = +prompt("Cuantas horas fueron hoy?: ");
+//   totalHoras += cantDiaria;
+// }
+
+// console.log(
+//   `El trabajador tiene ${totalHoras} horas trabajadas con un pago de ${
+//     totalHoras * pagoHora
+//   }`
+// );
+
+let productos = [
+  {
+    nombre: "Audifonos",
+    clave: 1,
+    materiaPrima: 20,
+  },
+  {
+    nombre: "Funda para movil",
+    clave: 2,
+    materiaPrima: 10,
+  },
+  {
+    nombre: "USB",
+    clave: 3,
+    materiaPrima: 15,
+  },
+  {
+    nombre: "Mouse Gamer",
+    clave: 6,
+    materiaPrima: 30,
+  },
+  {
+    nombre: "Teclado",
+    clave: 4,
+    materiaPrima: 120,
+  },
+  {
+    nombre: "Graficaaaa",
+    clave: 5,
+    materiaPrima: 200,
+  },
+];
+
+function calcularManoDeObra(clave, costoMP) {
+  if (clave == 3 || clave == 4) {
+    return costoMP * 0.75;
+  } else if (clave == 1 || clave == 5) {
+    return costoMP * 0.8;
+  } else if (clave == 2 || clave == 6) {
+    return costoMP * 0.85;
+  }
+}
+
+function calcularCostoFabricacion(clave, costoMP) {
+  if (clave == 2 || clave == 5) {
+    return costoMP * 0.3;
+  } else if (clave == 3 || clave == 6) {
+    return costoMP * 0.35;
+  } else if (clave == 1 || clave == 4) {
+    return costoMP * 0.28;
+  }
+}
+
+function calcularCostos(arrProductos) {
+  for (let i = 0; i < arrProductos.length; i++) {
+    //enfoquemonos en la mano de obra
+    let costoMP = arrProductos[i].materiaPrima;
+    console.log("MP", costoMP);
+    let clave = arrProductos[i].clave;
+    let costoMO = calcularManoDeObra(clave, costoMP);
+    let costoCF = calcularCostoFabricacion(clave.costoMP);
+
+    let cProduccion = costoMP + costoMO + costoCF;
+    // costoMO + costoCF
+
+    console.log(
+      `el costo total de ${arrProductos[i].nombre} es S/ ${cProduccion}`
+    );
+  }
+}
+
+calcularCostos(productos);
