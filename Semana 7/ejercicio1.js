@@ -33,12 +33,60 @@
 //sumar arreglos
 // let numeros = [1, 2, 3, 10, 20];
 
-//sumar arreglo mixto
+// function sumarNumeros(a, b) {
+//   let totalNumeros = 0;
+//   for (let i = 0; i < numeros.length; i++) {
+//     totalNumeros =  a + b
+//   }
+//   return totalNumeros;
+// }
+
+// console.log("El total es: ",sumarNumeros(20,10));
+
+// //sumar arreglo mixto
 // let arregloMixto = ["4", 5, 2, "6", 10];
+
+// function sumaArregloMixto (arregloMix){
+//     let sumaTotal = 0;
+//     for (let i = 0 ; i < arregloMixto.length ; i ++){
+//         sumaTotal += Number(arregloMix[i])
+//     }
+//     return sumaTotal
+// }
+
+// console.log("La suma total es: ",sumaArregloMixto(arregloMixto))
+
 
 //sumar unicamente numeros positivos
 // let numeros = [1, -2, 3, 10, -5];
 
 
+
 // Buscar la cantidad de palabras del siguiente arreglo
 // let palabras = ["perro", "gato", "leon", "dragon", "perro", "gato","gato"];
+
+//EJERCICIO RUC
+
+// function verificarRUC(ruc) {
+//   //verificamos que el ruc tenga 11 digitos
+//   if (ruc.length == 11) {
+//     //es correcto
+//     //porque eventualmente en este bloque de codigo retornare un true
+//     let factorChequeo = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
+//     let total = 0;
+//     for (let i = 0; i < factorChequeo.length; i++) {
+//       let prod = ruc[i] * factorChequeo[i];
+//       total += prod;
+//     }
+//     let modulo = total % 11;
+//     let verificador = 11 - modulo;
+//     if (verificador == ruc[10]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// console.log(verificarRUC("20100128056"));
+
+
