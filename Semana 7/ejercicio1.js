@@ -134,6 +134,7 @@ let productos = [
 ];
 
 function calcularManoDeObra(clave, costoMP) {
+  console.log("ejecutando mano de obra");
   if (clave == 3 || clave == 4) {
     return costoMP * 0.75;
   } else if (clave == 1 || clave == 5) {
@@ -144,6 +145,7 @@ function calcularManoDeObra(clave, costoMP) {
 }
 
 function calcularCostoFabricacion(clave, costoMP) {
+  console.log("ejecutando costo fabricacion");
   if (clave == 2 || clave == 5) {
     return costoMP * 0.3;
   } else if (clave == 3 || clave == 6) {
@@ -154,21 +156,22 @@ function calcularCostoFabricacion(clave, costoMP) {
 }
 
 function calcularCostos(arrProductos) {
+    let cProduccion = 0;
   for (let i = 0; i < arrProductos.length; i++) {
     //enfoquemonos en la mano de obra
     let costoMP = arrProductos[i].materiaPrima;
     console.log("MP", costoMP);
     let clave = arrProductos[i].clave;
     let costoMO = calcularManoDeObra(clave, costoMP);
-    let costoCF = calcularCostoFabricacion(clave.costoMP);
+    let costoCF = calcularCostoFabricacion(clave, costoMP);
 
-    let cProduccion = costoMP + costoMO + costoCF;
-    // costoMO + costoCF
+    cProduccion += costoMP + costoMO + costoCF;
 
-    console.log(
-      `el costo total de ${arrProductos[i].nombre} es S/ ${cProduccion}`
-    );
+    // console.log(
+    //   `el costo total de ${arrProductos[i].nombre} es S/ ${cProduccion}`
+    // );
   }
+  return cProduccion;
 }
 
-calcularCostos(productos);
+console.log(calcularCostos(productos));
