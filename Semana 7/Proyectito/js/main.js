@@ -4,6 +4,7 @@ let listaPlatillos = [
     nombre: "Crema de Verduras",
     descripcion:
       "Suave crema preparada con una variedad de verduras estacionales",
+    modena: "S/",
     precio: 12.0,
     stock: 10,
     imagen:
@@ -14,6 +15,7 @@ let listaPlatillos = [
     nombre: "Albondigas con salsa Barbeque",
     descripcion:
       "Albondigas de carne de res condimentandas con finas hierbas acompañadas con Salsa Bbq y espinacas",
+    modena: "S/",
     precio: 18.0,
     stock: 8,
     imagen:
@@ -23,6 +25,7 @@ let listaPlatillos = [
     id: 3,
     nombre: "Hamburguesa Royal",
     descripcion: "Carne, Queso, Huevo y tomate, todo envuelto con pan",
+    modena: "S/",
     precio: 11.0,
     stock: 14,
     imagen:
@@ -32,6 +35,7 @@ let listaPlatillos = [
     id: 4,
     nombre: "Pizza de la casa",
     descripcion: "Pizza con recetea original de la casa",
+    modena: "S/",
     precio: 14.0,
     stock: 7,
     imagen:
@@ -41,6 +45,7 @@ let listaPlatillos = [
     id: 5,
     nombre: "Ceviche de la casa",
     descripcion: "Plato Bandera Peruano acompañado con bebida a elección",
+    modena: "S/",
     precio: 20.0,
     stock: 10,
     imagen:
@@ -50,6 +55,7 @@ let listaPlatillos = [
     id: 6,
     nombre: "Ramen Fusión",
     descripcion: "Ramen preparado con ingredientes Peruanos",
+    modena: "S/",
     precio: 19.0,
     stock: 6,
     imagen:
@@ -66,3 +72,58 @@ let listaPlatillos = [
  * 3. OPCIONAL (mostrar el resumen del carrito en la parte izquierda)
  * 4. OPCIONAL (guardar el resumen en el LocalStorage)
  */
+
+//1.
+let divContenido = document.getElementById("contenido");
+
+let carrito = [];
+
+function dibujarTarjetas() {
+  //va a representar el HTML de las tarjetas que quiero representar pero en string
+  let htmlTarjetas = "";
+  listaPlatillos.forEach(function (plato) {
+    htmlTarjetas =
+      htmlTarjetas +
+      `<div class="tarjeta">
+          <div class="imagen">
+            <img src="${plato.imagen}">
+          </div>
+          <div class="texto">
+            <h4>${plato.nombre}</h4>
+            <p>${plato.descripcion}</p>
+            <div class="precio">
+              <span>${plato.modena} ${plato.precio}</span>
+              <button class="btn-agregar" data-idplato="${plato.id}">
+                Agregar
+              </button>
+            </div>
+          </div>
+        </div>`;
+  });
+  divContenido.innerHTML = htmlTarjetas;
+}
+
+dibujarTarjetas();
+
+//Obteniendo botones agregar
+
+let botonesAgregar = document.querySelectorAll(".btn-agregar");
+
+botonesAgregar.forEach(function (boton) {
+  boton.addEventListener("click", function () {
+    //getAttribute me da el valor de un atributo que indiquemos
+    let idObtenido = +boton.getAttribute("data-idplato");
+    // console.log(idObtenido);
+    let platoEncontrado = buscarPlatoPorId(idObtenido);
+    // console.table(platoEncontrado);
+    carrito.push(platoEncontrado);
+    console.log(carrito);
+  });
+});
+
+function buscarPlatoPorId(id) {
+  let platilloEncontrado = listaPlatillos.find(function (plato) {
+    return plato.id == id;
+  });
+  return platilloEncontrado;
+}
