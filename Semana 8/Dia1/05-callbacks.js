@@ -30,21 +30,27 @@ let alumnosDB = [
   "Graciela",
   "Melissa",
 ];
-//fCallback va a ser la referencia de una funcion que vamos a pasar como parametro
-// const buscarAlumno = function (nombre, fCallback) {
-//   //para simular que va a demorar voy a utilizar un setTimeout
-//   //esta funcion retornara true o false, para indicar si encuentra el alumno
-//   setTimeout(function () {
-//     for (let i = 0; i = alumnosDB.length; i++) {
-//       if (alumnosDB[i] == nombre) {
-//         //hemos encontrado el alumno
-//         fCallback(true);
-//         return; //cortar la ejecucion de la funcion
-//       }
-//     }
-//     //si no la encotramos
-//     fCallback(false);
-//   }, 4000);
-// };
+// fCallback va a ser la referencia de una funcion que vamos a pasar como parametro
+const buscarAlumno = function (nombre, fCallback) {
+  //para simular que va a demorar voy a utilizar un setTimeout
+  //esta funcion retornara true o false, para indicar si encuentra el alumno
+  setTimeout(function () {
+    for (let i = 0; i < alumnosDB.length; i++) {
+      if (alumnosDB[i] == nombre) {
+        //hemos encontrado alumno
+        fCallback(true);
+        return; // cortar ejecucion de la funcion
+      }
+    }
+    //si no la encontramos
+    fCallback(false);
+  }, 4000);
+};
 
-console.log("Hola")
+buscarAlumno("Melissa", function (existe) {
+  if (existe == true) {
+    console.log("El alumno existe");
+  } else {
+    console.log("El alumno no existe ERRROR");
+  }
+});
