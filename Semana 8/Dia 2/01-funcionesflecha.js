@@ -20,3 +20,5 @@ Mouse.roer();
 //No usen funciones flecha como metodos de un objeto, no funciona el this
 
 //Afuerita de un objeto utilicemos funciones flecha
+
+// video 1510 - 33:45
