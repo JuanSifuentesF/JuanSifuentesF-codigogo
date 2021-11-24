@@ -1,24 +1,30 @@
-//Funcion flecha
-const saludar = (nombre) => {
-  return `Hola soy ${nombre}`;
+//clasica
+
+// function saludar(nombre) {
+//   return `Hola soy, ${nombre}`;
+// }
+
+//anonima
+const despedida = function (mensaje) {
+  return `Bye ${mensaje}`;
 };
-//si es algo sencillo directamente puede indicar en la misma linea lo que se va a retornar
-//const saludar = nombre => `Hola soy ${nombre}`;
+
+// //Funcion flecha
+// const saludar = (nombre) => {
+//   return `Hola soy ${nombre}`;
+// };
+
+//si solo tengo 01 artumento para recibir
+const saludar = (nombre) => `Hola soy ${nombre}`;
 
 console.log(saludar("Daniel"));
+console.log(despedida("hasta pronto"));
 
 let Mouse = {
   nombre: "Miguelito",
-  roer: function () {
+  roer: function(){
     console.log(`${this.nombre} roe queso`);
-    console.log(this);
   },
 };
 
 Mouse.roer();
-
-//No usen funciones flecha como metodos de un objeto, no funciona el this
-
-//Afuerita de un objeto utilicemos funciones flecha
-
-// video 1510 - 33:45
