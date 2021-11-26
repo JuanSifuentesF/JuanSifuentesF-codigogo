@@ -6,3 +6,6 @@ fetch("https://reqres.in/api/users?page=2")
   .then((gatos) => {
     console.log(gatos);
   });
+
+
+//   [[[21:10 hrs]]]
