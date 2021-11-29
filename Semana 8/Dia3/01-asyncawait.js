@@ -24,5 +24,5 @@ const usarData = async () => {
     console.log(error);
   }
 };
-
+//16:01 video
 usarData();
