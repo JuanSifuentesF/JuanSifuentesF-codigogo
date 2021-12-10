@@ -8,10 +8,14 @@
 // async, me devuelve una promesa en vez de retornarme el resultado directamete
 const traerData = async () => {
   //aca adentro yo tengo mas codigo, haga operaciones un if, etc
-  //y cuando tenga exito return si fallo throw
+  //y cuando tenga exito return, si fallo throw
   //   return "Data Obtenida con async";
-  throw "Error al obtener data con async";
+  throw "Error al obtener data con async"; //throw = reject
 };
+
+// traerData()
+//   .then((rpta) => console.log(rpta))
+//   .catch((error) => console.log(error));
 
 const usarData = async () => {
   //cuando utilicemos await, tiene que esta dentro de una funcion y esa funcion tiene que tener async
@@ -24,5 +28,5 @@ const usarData = async () => {
     console.log(error);
   }
 };
-//16:01 video
+
 usarData();
