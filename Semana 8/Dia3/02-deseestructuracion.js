@@ -19,7 +19,30 @@ let celular = {
   memoria: 4,
   camara: 12,
   marca: "motorola",
-  enceder: function () {
+  encender: function () {
     console.log("tururu");
   },
 };
+
+//tengo que saber que propiedades tiene el objeto - requisito
+
+// let { pantalla, encender, marca, memoria, color, camara } = celular;
+
+let { pantalla, encender, marca, color } = celular;
+
+console.log(pantalla);
+encender();
+console.log(color);
+console.log(marca);
+
+//que tengo una funcion que recibe las caracteristicas de ua persona
+
+// let verificarPersona = (nombre, dni, edad) => {
+//   console.log(nombre);
+//   console.log(dni);
+//   console.log(edad);
+// };
+
+// verificarPersona("Juan", "90890809", 25);
+
+
